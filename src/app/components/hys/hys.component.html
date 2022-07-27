@@ -1,0 +1,126 @@
+
+<div id="azul" class="row">
+    <h1 ></h1>
+  </div>
+    <div id="azul"   class="text-center">
+        
+    <div class="container">
+  
+     
+        <h2 class="font-italic text-center">Hard & Soft skills</h2>
+
+    <img id="skills-img" src="../../../assets/skills-logo.png" alt="" class="center" class="img-fluid" >
+  
+  
+    </div>
+
+
+    <div  *ngFor="let Hys of hys" class="container text-center"> 
+  
+    <div class="row" id="azul" >
+
+
+        <div class="col-lg-2">
+
+        <img src="{{Hys.imgHys}}" class="img-fluid" id="logo-array-img">
+
+       </div>
+      
+      
+          <div  class="col-lg-8">
+
+
+            <h2 class="text-light"> {{Hys.nombreHys}} </h2>
+
+          <!--   por si no es necesario
+             <h3 class="text-light ">  {{Proyectos.descripcionPro}}  </h3>
+
+             --> 
+
+
+
+             <div class="progress">
+                <div class="progress-bar bg-danger" 
+                role="progressbar" 
+                style="width: {{Hys.porcentaje}}%;"
+                 aria-valuenow="{Hys.porcentaje}" 
+                 aria-valuemin="0" 
+                 aria-valuemax="100">{{Hys.porcentaje}}%
+                </div>
+              </div>
+          
+            
+
+       
+
+        </div>  
+
+        <td *ngIf="isLogged" >
+            <button class="btn btn-light" routerLink="/edithys/{{Hys.id}}">
+                <i class="bi bi-pencil-fill"></i> EDITAR</button>
+        </td>
+
+
+
+        <td *ngIf="isLogged" >
+            <button class="btn btn-danger" (click)="deleteHys(Hys.id)">
+                <i class="bi bi-trash-fill"></i> BORRAR</button>
+        </td>
+
+
+
+
+        
+
+
+
+   
+  
+
+
+    </div>  
+
+</div>  
+
+
+
+
+<div class="col-lg-11" id="azul"  class="text-center">
+    <button type="button" class="btn btn-dark" routerLink="/nuevohys" *ngIf="isLogged">
+        Nuevo HyS
+    </button>
+</div>
+
+
+
+
+
+
+
+<!--
+
+<div class="row" id="azul">
+   
+    <div class="text-center col-sm-4 col-md-4 col-lg-4"  >
+        <circle-progress
+            [percent]="95"
+            [radius]="90"
+            [imageSrc]="'../assets/html.png'"
+            [showImage]="true"
+            [imageHeight]="70"
+            [imageWidth]="70"
+            [showUnits]="false"
+            [showSubtitle]="false"
+            [outerStrokeWidth]="16"
+            [innerStrokeWidth]="2"
+            [outerStrokeColor]="'#78C000'"
+            [innerStrokeColor]="'#C7E596'"
+            [animation]="true"
+            [animationDuration]="600"
+        ></circle-progress>
+    </div>
+    
+</div>
+
+
+-->

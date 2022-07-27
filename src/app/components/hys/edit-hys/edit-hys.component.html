@@ -1,0 +1,30 @@
+<div class="container" *ngIf="hys">
+    <div class="row">
+        <div>
+            <form (ngSubmit)="onUpdateHys()" novalidate #f="ngForm">
+                <div class="form-group">
+                    <label for="nombreHys">Nombre del Hys </label>
+                    <input type="text" class="form-control" id="nombreHys" name="nombreHys" [(ngModel)]="hys.nombreHys" required>
+                </div>
+                <div class="form-group">
+                    <label for="descripcionHys">Descripcion</label>
+                    <input type="text" class="form-control" id="descripcionHys" name="descripcionHys" [(ngModel)]="hys.descripcionHys" required>
+                </div>
+                <div class="form-group">
+                    <label for="imgHys">"URL de la imágen en formato 'https://.."</label>
+                    <input type="text" class="form-control" id="imgHys" name="imgHys" [(ngModel)]="hys.imgHys" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="porcentaje">"Porcentaje de Hys"</label>
+                    <input type="text" class="form-control" id="porcentaje" name="porcentaje" [(ngModel)]="hys.porcentaje" required>
+                </div>
+
+
+                <button class="btn btn-primary">
+                    Actualizar
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

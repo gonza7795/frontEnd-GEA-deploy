@@ -1,0 +1,233 @@
+<div id="azul" class="row" *ngIf="persona">
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2" >
+
+      <!-- <img src="../../../assets/perfil.png" class="img-fluid" id="fotodeperfil" >-->
+        
+      
+      <img src={{persona.img}} class="img-fluid" id="fotodeperfil">
+
+   
+
+
+    </div>
+
+
+
+
+    
+
+    <div class="col-xs-12 col-sm-2 col-md-2 col-lg-2">
+       
+
+        <!-- para usar la base d datos .json -->
+       <!--     <h3 id="nombre" >Gonzalo Alvarez</h3>-->
+       <h3 id="nombreCompleto" > {{persona.nombre}} {{persona.apellido}}</h3> 
+        
+       
+
+
+         <!-- para usar la base d datos .json -->
+
+        
+
+            
+
+
+          
+
+   <!--   <h5> Full Stack Developer Jr</h5> -->
+
+    <h5> {{persona.titulo}}</h5> 
+
+        
+
+    </div>
+
+    <div class="col-xs-12 col-sm-8col-md-8 col-lg-8"> 
+        <span>
+            <h3 class="text-light">Acerca de mí</h3>
+            
+     <!--  <p class="text-light">Ingeniero Electromecánico y Doctor en Ingeniería Industrial. Coordinador y Desarrollador de Proyectos en diversas ramas de la ingeniería: procesos, productos, optimización, programación en varios lenguajes</p>  -->  
+            <p class="text-light" >{{persona.descripcion}}</p>
+    
+    
+    </span>
+    </div>
+
+  </div>
+
+
+
+
+
+
+  <div class="col text-center" id="azul">
+
+
+
+
+    <!-- Button trigger modal -->
+    <button type="button" class="btn btn-secondary btn-lg" data-bs-toggle="modal" data-bs-target="#editUsuarioModal" *ngIf="isLogged" (click)="onOpenModal('edit', persona)" >
+    Editar Información sobre {{persona.nombre}} {{persona.apellido}}</button>
+    
+    
+    </div>
+
+
+
+
+
+
+    
+<!-- Modal editar -->
+<div class="modal fade" id="editUsuarioModal" tabindex="-1" aria-labelledby="editUsuarioModalLabel" aria-hidden="true" >
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="editUsuarioModalLabel">Editar Información sobre el Usuario   </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+
+
+        <form #editForm="ngForm" >
+        
+
+          <input
+          type="hidden"
+          ngModel="{{ editPersona?.id }}"
+          name="id"
+          class="form-control"
+          id="id"
+          placeholder=""
+        />
+
+
+
+        <div class="form-group">
+          <label for="nombre"> Nombre</label>   
+            <input 
+            type="text"
+            ngModel="{{editPersona?.nombre}}"
+            name="nombre"
+            class="form-control"
+            id="nombre"
+            placeholder="Nombre"
+            
+            >                   
+      </div>
+
+
+     
+
+
+        <div class="form-group">
+          <label for="apellido"> Apellido</label>   
+            <input 
+            type="text"
+            ngModel="{{editPersona?.apellido}}"
+            name="apellido"
+            class="form-control"
+            id="apellido"
+            placeholder="apellido"
+            
+            >                   
+      </div>
+
+
+    
+
+
+  
+
+
+      <div class="form-group">
+        <label for="fotoPerfil"> URL de foto de Perfil</label>   
+          <input 
+          type="text"
+          ngModel="{{editPersona?.img}}"
+          name="fotoPerfil"
+          class="form-control"
+          id="fotoPerfil"
+          placeholder="fotoPerfil"
+          
+          >                   
+    </div>
+
+
+
+    
+    <div class="form-group">
+      <label for="titulo"> Título</label>   
+        <input 
+        type="text"
+        ngModel="{{editPersona?.titulo}}"
+        name="titulo"
+        class="form-control"
+        id="titulo"
+        placeholder="titulo"
+        
+        >                   
+  </div>
+
+
+
+    <div class="form-group">
+      <label for="descripcion"> Descripción</label>   
+        <input 
+        type="text"
+        ngModel="{{editPersona?.descripcion}}"
+        name="descripcion"
+        class="form-control"
+        id="descripcion"
+        placeholder="incluya la descripcion"
+        
+        >                   
+  </div>
+
+
+
+
+
+
+          <div class="modal-footer">
+            <button
+            (click)="onUpdate()"
+    
+            data-bs-dismiss="modal"
+            
+            class="btn btn-success"
+            >
+            Guardar Cambios
+    
+            </button>
+    
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+          </div>
+
+
+        
+          
+
+      </form>
+
+        
+
+
+
+
+      </div>
+     
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+

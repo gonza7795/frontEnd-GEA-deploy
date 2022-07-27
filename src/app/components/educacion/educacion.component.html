@@ -1,0 +1,77 @@
+
+
+<div id="azul" class="row">
+    <h1 ></h1>
+  </div>
+    <div id="azul"   class="text-center">
+        
+    <div class="container">
+  
+     
+    <h2 class="font-italic">Educacion</h2>
+    <img id="birrete-img" src="../../../assets/birrete1.png" alt="" class="center" class="img-fluid" >
+  
+    </div>
+  
+       
+  
+     
+  <div  *ngFor="let Educacion of educ" class="container text-center">
+  
+   
+  
+      <div class="row">
+
+
+        <div class="col-lg-2">
+
+        <img src="{{Educacion.imgEduc}}" class="img-fluid" id="logo-array-img">
+
+       </div>
+      
+      
+          <div  class="col-lg-8">
+
+            <h2 class="text-light"> {{Educacion.nombreEduc}} </h2>
+          
+            <h3 class="text-light ">  {{Educacion.descripcionEduc}}  </h3>
+
+        </div>  
+
+        </div>
+
+
+
+       
+            
+            <td *ngIf="isLogged">
+                <button class="btn btn-light" routerLink="/editeduc/{{Educacion.id}}">
+                    <i class="bi bi-pencil-fill"></i> EDITAR</button>
+            </td>
+
+         
+            <td *ngIf="isLogged">
+                <button class="btn btn-danger" (click)="deleteEduc(Educacion.id)">
+                    <i class="bi bi-trash-fill"></i> BORRAR</button>
+            </td>
+      
+      
+
+
+  
+  
+  </div>
+
+
+ 
+
+
+
+
+<div class="col-lg-11" id="azul"  class="text-center">
+    <button type="button" class="btn btn-dark" routerLink="/nuevaeduc" *ngIf="isLogged">
+        Nueva Educacion
+    </button>
+</div>
+
+
