@@ -8,7 +8,7 @@ import { Hys } from '../model/hys';
 })
 export class SHysService {
 
-  hysURL = 'http://localhost:8080/hys/';
+  hysURL = 'https://portfolio-gea-back.herokuapp.com/hys/';
 
   constructor(private httpClient: HttpClient) { }
 

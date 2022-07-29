@@ -9,7 +9,7 @@ import { Proyectos } from '../model/proyectos';
 })
 export class SProyectosService {
 
-  proURL = 'http://localhost:8080/proyectos/';
+  proURL = 'https://portfolio-gea-back.herokuapp.com/proyectos/';
 
 
   constructor(private httpClient: HttpClient) { }

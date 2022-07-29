@@ -8,7 +8,7 @@ import { Educacion } from '../model/educacion';
 })
 export class SEducacionService {
 
-  educURL = 'http://localhost:8080/educacion/';
+  educURL = 'https://portfolio-gea-back.herokuapp.com/educacion/';
 
   constructor(private httpClient: HttpClient) { }
 

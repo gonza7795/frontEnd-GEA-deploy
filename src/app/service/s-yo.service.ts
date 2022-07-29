@@ -11,7 +11,7 @@ export class SYoService {
 
 
 
-  yoURL = 'http://localhost:8080/yo/';
+  yoURL = 'https://portfolio-gea-back.herokuapp.com/yo/';
 
 
 
